@@ -1,9 +1,8 @@
-
 var infos = [];
 
-// notifys
-
 function info(content, type) {
+    initNotificationBlock();
+
     infos.push({
         content: content,
         type: type
@@ -36,6 +35,7 @@ function info(content, type) {
 
 }
 
-$(document).ready(function () {
-    infoBlock = $('<div>').attr('id', 'info-list').appendTo($('body'));
-});
+function initNotificationBlock() {
+    if ($('#info-list').length == 0)
+        $('<div>').attr('id', 'info-list').appendTo($('body'));
+}

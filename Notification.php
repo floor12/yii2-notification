@@ -20,7 +20,6 @@ class Notification
 
     public static function notification($text, $type): string
     {
-
         NotificationAsset::register(Yii::$app->getView());
         return Html::script("info(\"{$text}\",{$type});");
     }
