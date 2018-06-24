@@ -1,13 +1,12 @@
 <?php
 
-namespace floor12\editmodal;
+namespace floor12\notification;
 
 use yii\web\AssetBundle;
 
-
 class NotificationAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/floor12/notification/';
+    public $sourcePath = '@vendor/floor12/yii2-notification/';
     public $css = [
         'floor12-notification.css'
     ];
@@ -16,6 +15,7 @@ class NotificationAsset extends AssetBundle
     ];
     public $depends = [
         'yii\web\JqueryAsset',
+        'rmrevin\yii\fontawesome\AssetBundle',
     ];
 
 }

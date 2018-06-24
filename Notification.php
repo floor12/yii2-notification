@@ -9,6 +9,7 @@
 namespace floor12\notification;
 
 use yii\helpers\Html;
+use \Yii;
 
 class Notification
 {
@@ -19,20 +20,22 @@ class Notification
 
     public static function notification($text, $type): string
     {
+
+        NotificationAsset::register(Yii::$app->getView());
         return Html::script("info(\"{$text}\",{$type});");
     }
 
-    public function info($text): string
+    public static function info($text): string
     {
         return self::notification($text, self::TYPE_INFO);
     }
 
-    public function error($text): string
+    public static function error($text): string
     {
         return self::notification($text, self::TYPE_ERROR);
     }
 
-    public function success($text): string
+    public static function success($text): string
     {
         return self::notification($text, self::TYPE_SUCCESS);
     }
