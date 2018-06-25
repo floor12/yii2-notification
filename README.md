@@ -16,7 +16,9 @@ or add this to the require section of your composer.json.
 "floor12/yii2-notification": "dev-master"
 ```
 
-To best experience include `floor12\notification\NotificationAsset` in your app.
+To use javascript way, add `floor12\notification\NotificationAsset` in your app.
+
+In case if using  PHP api, `NotificationAsset` will be included in your app by `Notification` class.
 
 Usage
 -----
