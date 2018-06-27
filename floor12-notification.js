@@ -39,3 +39,35 @@ function initNotificationBlock() {
     if ($('#info-list').length == 0)
         $('<div>').attr('id', 'info-list').appendTo($('body'));
 }
+
+
+function processError(response) {
+    if (typeof(response.responseJSON) === 'object') {
+        info(response.status + ': ' + response.responseJSON.message, 2)
+        return true;
+    }
+
+    if (response.responseText.length > 5) {
+
+        if (response.responseText.length < 40) {
+            info(response.responseText, 2);
+            return true;
+        }
+
+
+        if (response.responseText.length > 40) {
+            matches = response.responseText.match(/with message (.+)/);
+
+            if (!matches)
+                matches = response.responseText.match(/\): (.+)/);
+
+            if (matches) {
+                info(response.status + ': ' + matches[1].replace("&#039;", ""), 2);
+                return true;
+            }
+        }
+
+    }
+
+    info(response.status + ': ' + response.statusText, 2);
+}
