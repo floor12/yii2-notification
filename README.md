@@ -1,4 +1,8 @@
 # yii2-notification
+[![Latest Stable Version](https://poser.pugx.org/floor12/yii2-notification/v/stable)](https://packagist.org/packages/floor12/yii2-notification)
+[![Latest Unstable Version](https://poser.pugx.org/floor12/yii2-notification/v/unstable)](https://packagist.org/packages/floor12/yii2-notification)
+[![Total Downloads](https://poser.pugx.org/floor12/yii2-notification/downloads)](https://packagist.org/packages/floor12/yii2-notification)
+[![License](https://poser.pugx.org/floor12/yii2-notification/license)](https://packagist.org/packages/floor12/yii2-notification)
 
 This simple extension helps to show nice notifications in browser. 
 It uses FontAwesome icons and can be customised by overwriting base CSS styles.  
