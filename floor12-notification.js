@@ -1,5 +1,7 @@
+// Notification array
 var infos = [];
 
+// Main function adds a new Notification in the queue and shows it.
 function info(content, type) {
     initNotificationBlock();
 
@@ -35,12 +37,14 @@ function info(content, type) {
 
 }
 
+// To show Notification we need to add a special block to your DOM-model with id='info-list'.
 function initNotificationBlock() {
     if ($('#info-list').length == 0)
         $('<div>').attr('id', 'info-list').appendTo($('body'));
 }
 
-
+// When something goes wrong, this function will try to parse error response body to recognize error text.
+// After that it will show an error notification.
 function processError(response) {
     if (typeof(response.responseJSON) === 'object') {
         info(response.status + ': ' + response.responseJSON.message, 2)
@@ -54,7 +58,6 @@ function processError(response) {
             return true;
         }
 
-
         if (response.responseText.length > 40) {
             matches = response.responseText.match(/with message (.+)/);
 
@@ -66,8 +69,6 @@ function processError(response) {
                 return true;
             }
         }
-
     }
-
     info(response.status + ': ' + response.statusText, 2);
 }
