@@ -9,26 +9,26 @@
     margin-bottom: 10px;
     padding: 20px 20px 20px 50px;
     color: white;
-    border-radius: 4px;
+    border-radius: 2px;
     transition: all 0.2s ease-out 0s;
 
-    .fa {
-      font-size: 250%;
+    svg {
+      width: 34px;
+      margin: -7px 10px 0 -42px;
       position: absolute;
-      margin: -8px 0 0 -40px;
     }
 
   }
 
   .info-object-info {
-    background-color: rgba(117, 193, 218, 0.5);
+    background-color: rgba(30, 43, 47, 0.5);
   }
 
   .info-object-success {
-    background-color: rgba(30, 202, 120, 0.5);
+    background-color: rgba(6, 80, 45, 0.82);
   }
 
   .info-object-error {
-    background-color: rgba(202, 84, 30, 0.5);
+    background-color: rgba(123, 12, 12, 0.82);
   }
 }
