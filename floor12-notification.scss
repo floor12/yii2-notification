@@ -20,6 +20,11 @@
 
   }
 
+  .info-hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
   .info-object-info {
     background-color: rgba(30, 43, 47, 0.5);
   }

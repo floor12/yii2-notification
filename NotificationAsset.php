@@ -26,8 +26,4 @@ class NotificationAsset extends AssetBundle
     public $js = [
         'floor12-notification.js'
     ];
-    public $depends = [
-        'yii\web\JqueryAsset',
-    ];
-
 }
