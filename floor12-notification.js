@@ -26,9 +26,14 @@ f12notification = {
         info.classList.add(info_class);
         info.innerHTML = svg + content;
         f12notification.infoListBlock.appendChild(info);
+
         setTimeout(function () {
             info.classList.add('info-hidden');
         }, timeout);
+
+        setTimeout(function () {
+            info.remove();
+        }, timeout * 2);
     },
 
     initNotificationBlock: function () {
