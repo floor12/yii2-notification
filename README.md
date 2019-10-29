@@ -5,7 +5,7 @@
 [![License](https://poser.pugx.org/floor12/yii2-notification/license)](https://packagist.org/packages/floor12/yii2-notification)
 
 This simple extension helps to show nice notifications in browser. 
-It uses FontAwesome icons and can be customised by overwriting base CSS styles.  
+It use svg icons and can be customised by overwriting base CSS styles.  
 
 ![Image](https://floor12.net/images/yii2-notification.png)
 
