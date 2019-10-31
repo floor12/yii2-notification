@@ -4,7 +4,7 @@
 [![Total Downloads](https://poser.pugx.org/floor12/yii2-notification/downloads)](https://packagist.org/packages/floor12/yii2-notification)
 [![License](https://poser.pugx.org/floor12/yii2-notification/license)](https://packagist.org/packages/floor12/yii2-notification)
 
-*Этот файл так же доступен на [русском языке](README_RU.md).*
+*Этот файл так же доступен на [русском языке](README_RUS.md).*
 
 This simple extension helps to show nice notifications in browser. 
 It use svg icons and can be customised by overwriting base CSS styles.  
