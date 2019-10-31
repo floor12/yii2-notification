@@ -1,7 +1,7 @@
 f12notification = {
     infoListBlock: document.createElement('div'),
 
-    info: function (content, type) {
+    notification: function (content, type) {
         f12notification.initNotificationBlock();
 
         timeout = 3000
@@ -36,6 +36,16 @@ f12notification = {
         }, timeout * 2);
     },
 
+    success: function (content) {
+        this.notification(content, 1)
+    },
+    error: function (content) {
+        this.notification(content, 2)
+    },
+    info: function (content) {
+        this.notification(content, 0)
+    },
+
     initNotificationBlock: function () {
         if (document.getElementById('info-list') == null) {
             f12notification.infoListBlock.setAttribute('id', 'info-list')
@@ -45,7 +55,7 @@ f12notification = {
 }
 
 function info(content, type) {
-    console.warn('Function info() is deprecated. Please, replace info() for f12notification.info().')
+    console.warn('Function info() is deprecated. Please, replace info() for f12notification.info(), f12notification.success() or f12notification.error().')
     return f12notification.info(content, type);
 }
 
@@ -54,14 +64,14 @@ function info(content, type) {
 // After that it will show an error notification.
 function processError(response) {
     if (typeof (response.responseJSON) === 'object') {
-        info(response.status + ': ' + response.responseJSON.message, 2)
+        f12notification.error(response.status + ': ' + response.responseJSON.message)
         return true;
     }
 
     if (response.responseText.length > 5) {
 
         if (response.responseText.length < 40) {
-            info(response.responseText, 2);
+            f12notification.error(response.responseText);
             return true;
         }
 
@@ -72,10 +82,10 @@ function processError(response) {
                 matches = response.responseText.match(/\): (.+)/);
 
             if (matches) {
-                info(response.status + ': ' + matches[1].replace("&#039;", ""), 2);
+                f12notification.error(response.status + ': ' + matches[1].replace("&#039;", ""));
                 return true;
             }
         }
     }
-    info(response.status + ': ' + response.statusText, 2);
+    f12notification.error(response.status + ': ' + response.statusText);
 }
