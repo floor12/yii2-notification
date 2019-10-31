@@ -4,6 +4,8 @@
 [![Total Downloads](https://poser.pugx.org/floor12/yii2-notification/downloads)](https://packagist.org/packages/floor12/yii2-notification)
 [![License](https://poser.pugx.org/floor12/yii2-notification/license)](https://packagist.org/packages/floor12/yii2-notification)
 
+*Этот файл так же доступен на [русском языке](README_RU.md).*
+
 This simple extension helps to show nice notifications in browser. 
 It use svg icons and can be customised by overwriting base CSS styles.  
 
@@ -20,28 +22,46 @@ or add this to the require section of your composer.json.
 "floor12/yii2-notification": "dev-master"
 ```
 
-To use javascript way, add `floor12\notification\NotificationAsset` in your app.
+To include js and css files, add `floor12\notification\NotificationAsset` as dependency in your AppAsset:
 
-In case if using  PHP api, `NotificationAsset` will be included in your app by `Notification` class.
 
-Usage
+```php
+use floor12\notification\NotificationAsset;
+use yii\web\AssetBundle;
+
+class AppAsset extends AssetBundle
+{
+    ...
+    public $depends = [
+        NotificationAsset::class
+    ];
+}
+```
+
+Using as JS
 -----
-Show notification by run JS function `info(text,type)` with text and one of this types:
+To show notification in browser just pass message text to one of the `f12notification` object methods:
 
-- `0` - information;
-- `1` - success;
-- `2` - error;
+
+```js
+f12notification.info(text);    //information message;
+f12notification.success(text); //success message;
+f12notification.error(text);   //error message;
+```
 
 For example:
 
-```js 
-if (success == true)
-    info('Model  saved',1);    
+```js
+if (userSucces == true)
+  f12notification.success('Registration success'.)
 else
-    info('Something wrong here',2);
+  f12notification.error('Registration failed.')
 ```
 
-Its also possible to show notifications by calling PHP API: 
+Using as PHP
+-----
+Its also possible to show notifications by passing message text to one of the `floor12\notification\Notification` methods:
+
 
 ```php
 use floor12\notification\Notification;
@@ -50,3 +70,7 @@ Notification::info('The form is loading...');
 Notification::error('Pleas fill all required fields');
 Notification::success('This model is saved');
 ```
+
+
+In case if using  PHP api, `NotificationAsset` will be included in your app by `Notification` class.
+
