@@ -4,6 +4,8 @@
 [![Total Downloads](https://poser.pugx.org/floor12/yii2-notification/downloads)](https://packagist.org/packages/floor12/yii2-notification)
 [![License](https://poser.pugx.org/floor12/yii2-notification/license)](https://packagist.org/packages/floor12/yii2-notification)
 
+Перед использованием можно [посмотреть на демо](https://floor12.net/packages/yii2-notification.html).
+
 В любых проектах бывает очень часто необходимо показывать какие-либо нотификации пользователю в ответ на какие-то его действия.  Для этих целей я написал эту небольшую библиотеку, у которой нет никаких зависимостей и написана она на чистом javascript.  
 
 Установка
