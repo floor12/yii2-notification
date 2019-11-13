@@ -56,7 +56,7 @@ f12notification = {
 
 function info(content, type) {
     console.warn('Function info() is deprecated. Please, replace info() for f12notification.info(), f12notification.success() or f12notification.error().')
-    return f12notification.info(content, type);
+    return f12notification.notification(content, type);
 }
 
 
