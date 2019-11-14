@@ -19,9 +19,7 @@
   },
   "autoload": {
     "psr-4": {
-      "floor12\\notification\\": [
-        "/"
-      ]
+      "floor12\\notification\\": "/"
     }
   },
   "repositories": [
