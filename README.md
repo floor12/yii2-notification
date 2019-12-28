@@ -10,7 +10,7 @@
 This simple extension helps to show nice notifications in browser. 
 It use svg icons and can be customised by overwriting base CSS styles.  
 
-![Image](https://floor12.net/images/yii2-notification.png)
+![Image](notification.jpg)
 
 Installation
 ------------
